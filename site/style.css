@@ -57,3 +57,8 @@ footer p { margin: 4px 0; }
   .hero { padding-top: 36px; }
   section { padding: 14px; }
 }
+.small-hero { padding: 28px 16px 18px; }
+.small-hero .logo { width: min(200px, 50vw); }
+.small-hero h1 { margin: 10px 0 0; color: var(--accent-hi); letter-spacing: 0.04em; text-transform: uppercase; font-size: 1.6rem; }
+main.terms { max-width: 860px; }
+main.terms li { margin: 4px 0; }
