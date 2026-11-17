@@ -1,6 +1,8 @@
 # Publishes the Doom Hub website (the site/ folder) to GitHub Pages, with the hub's status and the latest
-# release filled in. Runs on every push, every release, and every 15 minutes for the status icon
-# (4 deploys an hour; GitHub Pages allows about 10). Free for public repositories.
+# release filled in. Runs on every push to main, every 15 minutes for the status icon (4 deploys an hour;
+# GitHub Pages allows about 10), and when started by hand / by tools\release.ps1 after a release.
+# (Not on the release event itself: Pages only deploys from main, and a release runs on its tag.)
+# Free for public repositories.
 #
 # The hub's status address comes from the repository variable HUB_STATUS_URL (Settings > Secrets and
 # variables > Actions > Variables); without it, the default below is used.
@@ -9,8 +11,6 @@ name: Website
 on:
   push:
     branches: [main]
-  release:
-    types: [published]
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
