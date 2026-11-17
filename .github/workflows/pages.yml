@@ -1,0 +1,46 @@
+# Publishes the Doom Hub website (the site/ folder) to GitHub Pages, with the hub's status and the latest
+# release filled in. Runs on every push, every release, and every 15 minutes for the status icon
+# (4 deploys an hour; GitHub Pages allows about 10). Free for public repositories.
+#
+# The hub's status address comes from the repository variable HUB_STATUS_URL (Settings > Secrets and
+# variables > Actions > Variables); without it, the default below is used.
+name: Website
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hub status and latest release
+        env:
+          STATUS_URL: ${{ vars.HUB_STATUS_URL || 'http://104.238.229.94:25566/status' }}
+          SITE_URL: https://marcus101rr.github.io/DoomHub
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/status.py site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

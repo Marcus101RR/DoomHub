@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doom Hub</title>
+<meta name="description" content="Doom Hub: a lobby for playing Doom online with friends. Chat, rooms and one-click launching for Zandronum, Odamex, GZDoom, UZDoom, ZDaemon, Chocolate Doom, Crispy Doom and Sonic Robo Blast 2.">
+<link rel="icon" type="image/png" href="img/icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="img/logo.png" alt="Doom Hub">
+  <p class="tagline">A lobby for playing Doom online with friends.<br>Chat, make rooms, and launch your favourite source port together.</p>
+  <div class="actions">
+    <a id="download" class="button primary" href="https://github.com/Marcus101RR/DoomHub/releases/latest">Download Doom Hub</a>
+    <a class="button" href="https://github.com/Marcus101RR/DoomHub/releases">All releases</a>
+  </div>
+  <p id="release" class="small">Windows 10/11 &middot; no installer &middot; updates itself</p>
+  <div id="status" class="status unknown" title="Checked every 15 minutes">
+    <span class="dot"></span><span id="status-text">Hub status: checking...</span>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Supported engines</h2>
+    <div class="engines">
+      <div class="engine"><span class="badge" style="background:#c83c1e">Z</span>Zandronum</div>
+      <div class="engine"><span class="badge" style="background:#286ec8">O</span>Odamex</div>
+      <div class="engine"><span class="badge" style="background:#3c8c3c">GZ</span>GZDoom</div>
+      <div class="engine"><span class="badge" style="background:#1e8c8c">UZ</span>UZDoom</div>
+      <div class="engine"><span class="badge" style="background:#963caa">ZD</span>ZDaemon</div>
+      <div class="engine"><span class="badge" style="background:#784b28">CH</span>Chocolate Doom</div>
+      <div class="engine"><span class="badge" style="background:#be8c14">CR</span>Crispy Doom</div>
+      <div class="engine"><span class="badge" style="background:#1e50c8">S</span>Sonic Robo Blast 2</div>
+      <div class="engine"><span class="badge" style="background:#787878">?</span>Any other port (custom)</div>
+    </div>
+    <p class="small">Add the engines you have once; Doom Hub launches them with the right settings. You bring your own IWADs.</p>
+  </section>
+
+  <section>
+    <h2>Features</h2>
+    <div class="features">
+      <div><h3>Rooms</h3><p>Create, join and edit rooms with passwords, game options and DMFlags. Press Ready and you launch automatically when the host starts, even mid-game where the engine allows.</p></div>
+      <div><h3>File check &amp; sharing</h3><p>Doom Hub compares your WADs with the host's. Missing PWADs can be fetched from /idgames and the community WAD hosts, or from the host directly. IWADs are never shared.</p></div>
+      <div><h3>Server Browser</h3><p>Live public servers for Zandronum, Odamex, Chocolate Doom and SRB2, with country flags, filters, favourites and one-click joining.</p></div>
+      <div><h3>Chat</h3><p>Lobby and room chat with emoji, sound clips (WAV/MP3), "is typing", whispers and links that open with Ctrl+click.</p></div>
+      <div><h3>Mail &amp; friends</h3><p>A private inbox for messages, staff announcements and notifications, plus friends, profiles, avatars and points.</p></div>
+      <div><h3>Your look</h3><p>Five themes: Classic, Light, Dark, and the textured Hellfire and Tech Base. Resizable panels and rank colours.</p></div>
+      <div><h3>Safe updates</h3><p>Doom Hub updates itself, from the hub or from these GitHub releases. Every update is signed and checked before it installs.</p></div>
+      <div><h3>Staff tools</h3><p>Ranks, kick, mute, ban, maintenance mode, rank icons and colours, engine icons, emoji and sound libraries.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure><a href="img/lobby-hellfire.jpg"><img src="img/lobby-hellfire.jpg" alt="Lobby, Hellfire theme" loading="lazy"></a><figcaption>Lobby &middot; Hellfire</figcaption></figure>
+      <figure><a href="img/room-hellfire.jpg"><img src="img/room-hellfire.jpg" alt="In a room" loading="lazy"></a><figcaption>In a room &middot; Hellfire</figcaption></figure>
+      <figure><a href="img/browser-hellfire.jpg"><img src="img/browser-hellfire.jpg" alt="Server Browser" loading="lazy"></a><figcaption>Server Browser</figcaption></figure>
+      <figure><a href="img/mail-hellfire.jpg"><img src="img/mail-hellfire.jpg" alt="Mail" loading="lazy"></a><figcaption>Mail</figcaption></figure>
+      <figure><a href="img/room-techbase.jpg"><img src="img/room-techbase.jpg" alt="Tech Base theme" loading="lazy"></a><figcaption>Tech Base</figcaption></figure>
+      <figure><a href="img/lobby-classic.jpg"><img src="img/lobby-classic.jpg" alt="Classic theme" loading="lazy"></a><figcaption>Classic</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Getting started</h2>
+    <ol class="steps">
+      <li><strong>Download</strong> DoomHub.exe and run it. Keep it in a folder you can write to so it can update itself.</li>
+      <li><strong>Create an account</strong> on the login screen.</li>
+      <li><strong>Engines &rsaquo; Manage Engines</strong>: add your engine's .exe and the folders where your WADs live.</li>
+      <li><strong>Join a room</strong> (or create one), press <em>Ready</em>, and you're in when the host starts.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>FAQ</h2>
+    <details><summary>Is the download safe?</summary><p>Each release comes with <code>DoomHub.exe.sig</code>. Doom Hub checks that signature before installing any update and refuses files that weren't signed by the developer.</p></details>
+    <details><summary>Do I need the Doom IWADs?</summary><p>Yes. Doom Hub never shares or downloads IWADs (doom.wad, doom2.wad...). Steam and GOG copies work; free alternatives like Freedoom work too.</p></details>
+    <details><summary>Why can't friends join my game?</summary><p>Hosting needs the game's UDP port forwarded on your router (Doom Hub shows which one when you create a room). Sharing files directly needs the sharing port (UDP 10667 by default).</p></details>
+    <details><summary>Where are my settings?</summary><p>In <code>%APPDATA%\DoomHub\DoomHub</code>. Passwords are never saved.</p></details>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; MCK Productions, Marcus Koller</p>
+  <p class="small">Doom is a trademark of id Software; Doom Hub is a fan project and is not affiliated with id Software, Bethesda or the engine projects listed above.
+  <a href="https://db-ip.com">IP Geolocation by DB-IP</a> &middot; flag icons by famfamfam (public domain).</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
